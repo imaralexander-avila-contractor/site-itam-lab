@@ -115,8 +115,8 @@
                         }
                 </style>
                 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-                <script src="https://site-itam.googlecode.com/svn/branches/lib/jquery-1.10.2.min.js"></script>
-                <script src="https://site-itam.googlecode.com/svn/branches/lib/slides.min.jquery.js"></script>
+                <script src="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/jquery-1.10.2.min.js"></script>
+                <script src="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/slides.min.jquery.js"></script>
                 <script type="text/javascript">
                         google.load('visualization', '1.1', {packages: ['controls']});
                         google.setOnLoadCallback(draw);
@@ -133,7 +133,7 @@
                                                                 w = $('.slide').width() - w - 10;
                                                                 $('#slides .next').css('left', w);
 
-                                var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AuL8XqqgbAI4dG5xVEdKZnZUY2NSR29mNi1VQm92TXc&usp=drive_web#gid=0');
+                                var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1ZOw0_Z-BfC9xKp2Fxk4c33xnwLMxVYco1e6cKo0X5wA/edit#gid=0');
                                 query.send(handleQueryResponse);
                         }
                         
@@ -173,7 +173,7 @@
                         function slide_news() {
                                 $('#slides').slides({
                                         preload : true,
-                                        preloadImage : 'https://site-itam.googlecode.com/svn/branches/img/loading.gif',
+                                        preloadImage : 'https://sites.google.com/a/bbva.com/it-am-lab/files/loading.gif',
                                         play : 7000, //7000
                                         pause : 3500,//3500
                                         hoverPause : true,
@@ -185,7 +185,7 @@
                                         }
                                 });
                                 
-                                $('.pagination li a').css('background-image', 'url(https://site-itam.googlecode.com/svn/branches/img/pagination.png)');
+                                $('.pagination li a').css('background-image', 'url(https://sites.google.com/a/bbva.com/it-am-lab/files/pagination.png)');
                         }
                 </script>
                 <div id="slides">
@@ -304,10 +304,10 @@
                                 </div>
                         </div>
                         <a href="#" class="prev">
-                                <img src="https://site-itam.googlecode.com/svn/branches/img/arrow-prev.png" width="24" height="43" alt="Arrow Prev">
+                                <img src="https://sites.google.com/a/bbva.com/it-am-lab/files/arrow-prev.png" width="24" height="43" alt="Arrow Prev">
                         </a>
                         <a href="#" class="next">
-                                <img src="https://site-itam.googlecode.com/svn/branches/img/arrow-next.png" width="24" height="43" alt="Arrow Next">
+                                <img src="https://sites.google.com/a/bbva.com/it-am-lab/files/arrow-next.png" width="24" height="43" alt="Arrow Next">
                         </a>
                 </div>
 
