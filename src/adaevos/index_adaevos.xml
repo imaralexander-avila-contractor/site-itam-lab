@@ -164,7 +164,7 @@
 							#cboxPrevious:hover{background-position:bottom left;}
 							#cboxNext{position:absolute; top:50%; right:5px; margin-top:-32px; background:url('https://sites.google.com/a/bbva.com/it-am-lab/files/controlscbx.png') no-repeat top right; width:28px; height:65px; text-indent:-9999px;}
 							#cboxNext:hover{background-position:bottom right;}
-							#cboxClose{position:absolute; top:5px; right:5px; display:block; background:url('https://sites.google.com/a/bbva.com/it-am-lab/files//controlscbx.png') no-repeat top center; width:38px; height:19px; text-indent:-9999px;}
+							#cboxClose{position:absolute; top:5px; right:5px; display:block; background:url('https://sites.google.com/a/bbva.com/it-am-lab/files/controlscbx.png') no-repeat top center; width:38px; height:19px; text-indent:-9999px;}
 							#cboxClose:hover{background-position:bottom center;}
 						/*****************************************************************/
 						
@@ -237,12 +237,12 @@
                         }
                 </style>
                 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-                <script src="https://site-itam.googlecode.com/svn/trunk/lib/jquery-1.10.2.min.js"></script>
-                <link href="https://site-itam.googlecode.com/svn/trunk/lib/perfect-scrollbar.css" rel="stylesheet">
-                <script src="https://site-itam.googlecode.com/svn/trunk/lib/jquery.mousewheel.js"></script>
-                <script src="https://site-itam.googlecode.com/svn/trunk/lib/perfect-scrollbar.js"></script>
-                <link href="https://site-itam.googlecode.com/svn/trunk/lib/colorbox.css" rel="stylesheet" />
-                <script src="https://site-itam.googlecode.com/svn/trunk/lib/jquery.colorbox.js"></script>
+                <script src="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/jquery-1.10.2.min.js"></script>
+                <link href="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/perfect-scrollbar.css" rel="stylesheet">
+                <script src="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/jquery.mousewheel.js"></script>
+                <script src="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/perfect-scrollbar.js"></script>
+                <link href="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/colorbox.css" rel="stylesheet" />
+                <script src="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/jquery.colorbox.js"></script>
                 <script type="text/javascript">
                         if(typeof String.prototype.trim !== 'function') {
 						  String.prototype.trim = function() {
@@ -254,7 +254,7 @@
 
                         function draw() {
                   
-                                var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AoQFEv3dKsH6dEpDT0ZxWmlNMW1wcGhfTnRzN2RsM2c&usp=drive_web');
+                                var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AiFNgwhcmeiHdEFibmNyYWZxaVljM2NjdFEzbEQtN0E#gid=0');
 
                                 query.send(handleQueryResponse);
                                 
@@ -574,13 +574,13 @@
 								<table align="right">
 									<tr>
 										<td style="text-align:right;">
-											<a class="iframe" href="https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=0AjOaof4bFUTmdEtmd19KQUdDZnlnNjFBMDNWUm5qWmc&output=html&pubredirect=true&widget=true" >
-												<img src="https://sites.google.com/a/bbva.com/it-am-lab/files/btnGraficos2.png">
+											<a class="iframe" href="https://docs.google.com/spreadsheets/d/1YkVcEFtZWDFM60Fi-gqkqZeMPGzgbHzsP16qcbxLcT0/edit#gid=0" >
+												<img src="https://sites.google.com/a/bbva.com/it-am-lab/files/btnGraficos2.png?attredirects=0">
 											</a>
 										</td>
 										<td style="text-align:right;">
 											<a href="#" onclick="seleccionar(document.getElementById('select_table'));">
-												<img src="https://sites.google.com/a/bbva.com/it-am-lab/files/btnSelecciona2.png">
+												<img src="https://sites.google.com/a/bbva.com/it-am-lab/files/btnSelecciona2.png?attredirects=0">
 											</a>
 										</td>
 									</tr>
@@ -641,8 +641,8 @@
 						</tr>
 						<tr>
 							<td colspan="9" style="text-align:right;padding-right: 5px;">
-								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=0AjOaof4bFUTmdDQ2RlY5a0hOTGZXWXBmMVlNOUVpa1E&fmcmd=420">
-									<img src="https://sites.google.com/a/bbva.com/it-am-lab/files/btnDescarga2.png">
+								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=0AiFNgwhcmeiHdHlVZFNPLU9IT1J6Rmt1UnF2a0VPS0E&fmcmd=420">
+									<img src="https://sites.google.com/a/bbva.com/it-am-lab/files/btnDescarga2.png?attredirects=0">
 								</a>
 							</td>
 						</tr>
