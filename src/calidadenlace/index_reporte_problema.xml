@@ -260,7 +260,7 @@
                         google.setOnLoadCallback(draw);
 
                         function draw() {
-							var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1RpmpKCiIsaE9Kyk6xHfIyPDARlMHiHvpPXtLCwu3qXQ&usp=drive_web#gid=1871223754');
+							var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1RpmpKCiIsaE9Kyk6xHfIyPDARlMHiHvpPXtLCwu3qXQ/edit#gid=1871223754');
 							query.send(handleQueryResponse);
                                 
                         }
