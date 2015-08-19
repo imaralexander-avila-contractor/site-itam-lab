@@ -260,7 +260,12 @@
                         google.setOnLoadCallback(draw);
 
                         function draw() {
-							var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1RpmpKCiIsaE9Kyk6xHfIyPDARlMHiHvpPXtLCwu3qXQ/edit#gid=1871223754');
+							// var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1jU7ujdEKlJLgwlM1pHyyB093ZXCr5yqbYG94EF7N8iU&usp=drive_web#gid=1871223754');
+
+							// https://drive.google.com/open?id=1RpmpKCiIsaE9Kyk6xHfIyPDARlMHiHvpPXtLCwu3qXQ
+							// https://docs.google.com/spreadsheets/d/1RpmpKCiIsaE9Kyk6xHfIyPDARlMHiHvpPXtLCwu3qXQ/edit#gid=1871223754
+							
+							var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1RpmpKCiIsaE9Kyk6xHfIyPDARlMHiHvpPXtLCwu3qXQ&usp=drive_web#gid=1871223754');
 							query.send(handleQueryResponse);
                                 
                         }
@@ -317,7 +322,7 @@
                                                 'containerId': 'table',
                                                 'options': options
                                                 });
-                                // data.removeRow(0); // <j.schroeder> 201505061510 Se comenta porque no aparece el renglón 1 dentro de la página del site
+                                // data.removeRow(0); // <j.schroeder> 201505061510 Se comenta porque no aparece el renglÃ³n 1 dentro de la pÃ¡gina del site
                                 var formatter_fecha_alta = new google.visualization.DateFormat({pattern: 'dd.LLLyy'});
                                 formatter_fecha_alta.format(data, 3);
 								var formatter_fecha_compromiso = new google.visualization.DateFormat({pattern: 'dd.LLLyy'});
