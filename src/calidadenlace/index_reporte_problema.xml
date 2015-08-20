@@ -265,7 +265,7 @@
 							// https://drive.google.com/open?id=1RpmpKCiIsaE9Kyk6xHfIyPDARlMHiHvpPXtLCwu3qXQ
 							// https://docs.google.com/spreadsheets/d/1RpmpKCiIsaE9Kyk6xHfIyPDARlMHiHvpPXtLCwu3qXQ/edit#gid=1871223754
 							
-							var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=1RpmpKCiIsaE9Kyk6xHfIyPDARlMHiHvpPXtLCwu3qXQ&usp=drive_web#gid=1871223754');
+							var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1RpmpKCiIsaE9Kyk6xHfIyPDARlMHiHvpPXtLCwu3qXQ/edit#gid=1871223754');
 							query.send(handleQueryResponse);
                                 
                         }
@@ -482,7 +482,10 @@
 									<div id="contenido_tabla" style="height:500px;overflow:hidden;position:relative;">
 										<table width="100%">
 											<tr>
-												<td><div id="table"></div></td>
+												<td>
+													<div id="table">
+													</div>
+												</td>
 											</tr>
 										</table>
 									</div>
