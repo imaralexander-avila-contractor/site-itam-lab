@@ -1,100 +1,654 @@
-<?xml version="1.0" encoding="UTF-8" ?> 
-<Module>
-	<ModulePrefs title="index_adaevos.xml" /> 
-	<Content type="html">
-        <![CDATA[
-                <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-                <link href="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/index_adaevos.css" rel="stylesheet">
-                <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-                <script src="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/jquery-1.10.2.min.js"></script>
-                <link href="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/perfect-scrollbar.css" rel="stylesheet">
-                <script src="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/jquery.mousewheel.js"></script>
-                <script src="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/perfect-scrollbar.js"></script>
-                <link href="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/colorbox.css" rel="stylesheet" />
-                <script src="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/jquery.colorbox.js"></script>
-                <script src="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/index_adaevos.js"></script>
-				<div id="dashboard">
-					<table width="100%">
-						<tr>
-							<td colspan="9" style="text-align:right;padding-right: 5px;" class="filtros_style">
-								<table align="right">
-									<tr>
-										<td style="text-align:right;">
-											<a class="iframe" href="https://docs.google.com/spreadsheets/d/1YkVcEFtZWDFM60Fi-gqkqZeMPGzgbHzsP16qcbxLcT0/edit#gid=0" >
-												<img src="https://sites.google.com/a/bbva.com/it-am-lab/files/btnGraficos2.png">
-											</a>
-										</td>
-										<td style="text-align:right;">
-											<a href="#" onclick="seleccionar(document.getElementById('select_table'));">
-												<img src="https://sites.google.com/a/bbva.com/it-am-lab/files/btnSelecciona2.png">
-											</a>
-										</td>
-									</tr>
-								</table>
-								
-							</td>
-						</tr>
-						<tr>
-							<td width="5%" style="text-align:right;" class="filtros_style">Codigo:</td>
-							<td width="8%" class="filtros_style"><div id="filtro1"></div></td>
-							<td width="5%" style="text-align:right;" class="filtros_style">Champion:</td>
-							<td width="18%" class="filtros_style"><div id="filtro2"></div></td>
-							<td width="8%" style="text-align:right;" class="filtros_style">Líder:</td>
-							<td width="20%" class="filtros_style"><div id="filtro3"></div></td>
-							<td width="10%" style="text-align:right;" class="filtros_style">Oficina Proyectos:</td>
-							<td width="21%" class="filtros_style"><div id="filtro8"></div></td>
-							<td width="5%" style="text-align:right;" class="filtros_style"><input id="chk_editar" type="checkbox" onclick="cambia_detalle();">Editar</input></td>
-						</tr>
-						<tr>
-							<td height="50px" style="text-align:right;" class="filtros_style">Año:</td>
-							<td height="50px" class="filtros_style"><div id="filtro4"></div></td>
-							<td height="50px" style="text-align:right;" class="filtros_style">Estado:</td>
-							<td height="50px" class="filtros_style"><div id="filtro5"></div></td>
-							<td height="50px" style="text-align:right;" class="filtros_style">Fase Actual:</td>
-							<td height="50px" class="filtros_style"><div id="filtro6"></div></td>
-							<td height="50px" style="text-align:right;" class="filtros_style">Area:</td>
-							<td colspan = "2" height="50px" class="filtros_style"><div id="filtro7"></div></td>
-						</tr>
-						<tr>
-							<td colspan="9">
-								<div id="select_table">
-								<table id="headers_table"  width="100%" height="35px" class="filtros_style">
-									<tr>
-										<td id="h1" class="header_style"><input id="w1" type="hidden" value="60"/>CODIGO</td>
-										<td id="h2" class="header_style"><input id="w2" type="hidden" value="56"/>NOMBRE</td>
-										<td id="h3" class="header_style"><input id="w3" type="hidden" value="5"/>OP</td>
-										<td id="h4" class="header_style"><input id="w4" type="hidden" value="31"/>TIPO</td>
-										<td id="h5" class="header_style"><input id="w5" type="hidden" value="28"/>AÑO</td>
-										<td id="h6" class="header_style"><input id="w6" type="hidden" value="71"/>FIN PROYECTO</td>
-										<td id="h7" class="header_style"><input id="w7" type="hidden" value="38"/>LÍDER</td>
-										<td id="h8" class="header_style"><input id="w8" type="hidden" value="53"/>ESTADO</td>
-										<td id="h9" class="header_style"><input id="w9" type="hidden" value="49"/>FASE ACTUAL</td>
-										<td id="h10" class="header_style"><input id="w10" type="hidden" value="34"/>FIN FASE</td>
-										<td id="h11" class="header_style"><input id="w11" type="hidden" value="55"/>Ppto EST(MXN)</td>
-										<td id="h12" class="header_style"><input id="w12" type="hidden" value="70"/>CHAMPION</td>
-										<td id="h13" class="header_style"><input id="w13" type="hidden" value="35"/>ÁREA</td>
-									</tr>
-								</table>
-								<div id="contenido_tabla" style="height:500px;overflow:hidden;position:relative;">
-									<table width="100%">
-										<tr>
-											<td><div id="table"></div></td>
-										</tr>
-									</table>
-								</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td colspan="9" style="text-align:right;padding-right: 5px;">
-								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=0AiFNgwhcmeiHdHlVZFNPLU9IT1J6Rmt1UnF2a0VPS0E&fmcmd=420">
-									<img src="https://sites.google.com/a/bbva.com/it-am-lab/files/btnDescarga2.png">
-								</a>
-							</td>
-						</tr>
-					</table>
-                                        
-                </div>
-        ]]>
-	</Content> 
-</Module>
+<?xml version="1.0" encoding="UTF-8" ?>  
+2 <Module> 
+3 	<ModulePrefs title="index_adaevos.xml" />  
+4 	<Content type="html"> 
+5         <![CDATA[ 
+6                 <meta http-equiv="content-type" content="text/html; charset=utf-8"/> 
+7                 <style> 
+8 					/**********************PERFECT SCROLLBAR**************************/ 
+9 							.ps-container .ps-scrollbar-x-rail { 
+10 								position: absolute; /* please don't change 'position' */ 
+11 								bottom: 3px; /* there must be 'bottom' for ps-scrollbar-x-rail */ 
+12 								height: 8px; 
+13 								-webkit-border-radius: 4px; 
+14 								-moz-border-radius: 4px; 
+15 								border-radius: 4px; 
+16 								opacity: 0; 
+17 								filter: alpha(opacity = 0); 
+18 								-o-transition: background-color .2s linear, opacity .2s linear; 
+19 								-webkit-transition: background-color.2s linear, opacity .2s linear; 
+20 								-moz-transition: background-color .2s linear, opacity .2s linear; 
+21 								transition: background-color .2s linear, opacity .2s linear; 
+22 							} 
+23  
+24 							.ps-container:hover .ps-scrollbar-x-rail, 
+25 							.ps-container.hover .ps-scrollbar-x-rail { 
+26 								opacity: 0.6; 
+27 								filter: alpha(opacity = 60); 
+28 							} 
+29  
+30 							.ps-container .ps-scrollbar-x-rail:hover, 
+31 							.ps-container .ps-scrollbar-x-rail.hover { 
+32 								background-color: #eee; 
+33 								opacity: 0.9; 
+34 								filter: alpha(opacity = 90); 
+35 							} 
+36  
+37 							.ps-container .ps-scrollbar-x-rail.in-scrolling { 
+38 								opacity: 0.9; 
+39 								filter: alpha(opacity = 90); 
+40 							} 
+41  
+42 							.ps-container .ps-scrollbar-y-rail { 
+43 								position: absolute; /* please don't change 'position' */ 
+44 								right: 3px; /* there must be 'right' for ps-scrollbar-y-rail */ 
+45 								width: 8px; 
+46 								-webkit-border-radius: 4px; 
+47 								-moz-border-radius: 4px; 
+48 								border-radius: 4px; 
+49 								opacity: 1; 
+50 								filter: alpha(opacity = 100); 
+51 								-o-transition: background-color .2s linear, opacity .2s linear; 
+52 								-webkit-transition: background-color.2s linear, opacity .2s linear; 
+53 								-moz-transition: background-color .2s linear, opacity .2s linear; 
+54 								transition: background-color .2s linear, opacity .2s linear; 
+55 							} 
+56  
+57 							.ps-container:hover .ps-scrollbar-y-rail, 
+58 							.ps-container.hover .ps-scrollbar-y-rail { 
+59 								opacity: 1; 
+60 								filter: alpha(opacity = 100); 
+61 							} 
+62  
+63 							.ps-container .ps-scrollbar-y-rail:hover, 
+64 							.ps-container .ps-scrollbar-y-rail.hover { 
+65 								background-color: #eee; 
+66 								opacity: 1; 
+67 								filter: alpha(opacity = 100); 
+68 							} 
+69  
+70 							.ps-container .ps-scrollbar-y-rail.in-scrolling { 
+71 								opacity: 0.9; 
+72 								filter: alpha(opacity = 90); 
+73 							} 
+74  
+75 							.ps-container .ps-scrollbar-x { 
+76 								position: absolute; /* please don't change 'position' */ 
+77 								bottom: 0; /* there must be 'bottom' for ps-scrollbar-x */ 
+78 								height: 8px; 
+79 								background-color: #aaa; 
+80 								-webkit-border-radius: 4px; 
+81 								-moz-border-radius: 4px; 
+82 								border-radius: 4px; 
+83 								-o-transition: background-color .2s linear; 
+84 								-webkit-transition: background-color.2s linear; 
+85 								-moz-transition: background-color .2s linear; 
+86 								transition: background-color .2s linear; 
+87 							} 
+88  
+89 							.ps-container.ie6 .ps-scrollbar-x { 
+90 								font-size: 0; /* fixed scrollbar height in xp sp3 ie6 */ 
+91 							} 
+92  
+93 							.ps-container .ps-scrollbar-x-rail:hover .ps-scrollbar-x, 
+94 							.ps-container .ps-scrollbar-x-rail.hover .ps-scrollbar-x { 
+95 								background-color: #999; 
+96 							} 
+97  
+98 							.ps-container .ps-scrollbar-y { 
+99 								position: absolute; /* please don't change 'position' */ 
+100 								right: 0; /* there must be 'right' for ps-scrollbar-y */ 
+101 								width: 8px; 
+102 								background-color: #aaa; 
+103 								-webkit-border-radius: 4px; 
+104 								-moz-border-radius: 4px; 
+105 								border-radius: 4px; 
+106 								-o-transition: background-color .2s linear; 
+107 								-webkit-transition: background-color.2s linear; 
+108 								-moz-transition: background-color .2s linear; 
+109 								transition: background-color .2s linear; 
+110 							} 
+111  
+112 							.ps-container.ie .ps-scrollbar-y { 
+113 								font-size: 0; /* fixed scrollbar height in xp sp3 ie6 */ 
+114 							} 
+115  
+116 							.ps-container .ps-scrollbar-y-rail:hover .ps-scrollbar-y, 
+117 							.ps-container .ps-scrollbar-y-rail.hover .ps-scrollbar-y { 
+118 								background-color: #999; 
+119 							} 
+120  
+121 						/*****************************************************************/ 
+122 						 
+123 						/**********************COLORBOX************************************/ 
+124 							/* 
+125 							Colorbox Core Style: 
+126 							The following CSS is consistent between example themes and should not be altered. 
+127 							*/ 
+128 							#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;} 
+129 							#cboxWrapper {max-width:none;} 
+130 							#cboxOverlay{position:fixed; width:100%; height:100%;} 
+131 							#cboxMiddleLeft, #cboxBottomLeft{clear:left;} 
+132 							#cboxContent{position:relative;} 
+133 							#cboxLoadedContent{overflow:auto; -webkit-overflow-scrolling: touch;} 
+134 							#cboxTitle{margin:0;} 
+135 							#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;} 
+136 							#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;} 
+137 							.cboxPhoto{float:left; margin:auto; border:0; display:block; max-width:none; -ms-interpolation-mode:bicubic;} 
+138 							.cboxIframe{width:100%; height:100%; display:block; border:0;} 
+139 							#colorbox, #cboxContent, #cboxLoadedContent{box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;} 
+140  
+141 							/*  
+142 								User Style: 
+143 								Change the following styles to modify the appearance of Colorbox.  They are 
+144 								ordered & tabbed in a way that represents the nesting of the generated HTML. 
+145 							*/ 
+146 							#cboxOverlay{background:#000;} 
+147 							#colorbox{outline:0;} 
+148 							#cboxContent{margin-top:20px;background:#000;} 
+149 							.cboxIframe{background:#fff;} 
+150 							#cboxError{padding:50px; border:1px solid #ccc;} 
+151 							#cboxLoadedContent{border:5px solid #000; background:#fff;} 
+152 							#cboxTitle{position:absolute; top:-20px; left:0; color:#ccc;} 
+153 							#cboxCurrent{position:absolute; top:-20px; right:0px; color:#ccc;} 
+154 							#cboxLoadingGraphic{background:url('https://sites.google.com/a/bbva.com/it-am-lab/files/loadingcbx.gif') no-repeat center center;} 
+155  
+156 							/* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */ 
+157 							#cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {border:0; padding:0; margin:0; overflow:visible; width:auto; background:none; } 
+158 							 
+159 							/* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */ 
+160 							#cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active {outline:0;} 
+161 							 
+162 							#cboxSlideshow{position:absolute; top:-20px; right:90px; color:#fff;} 
+163 							#cboxPrevious{position:absolute; top:50%; left:5px; margin-top:-32px; background:url('https://sites.google.com/a/bbva.com/it-am-lab/files/controlscbx.png') no-repeat top left; width:28px; height:65px; text-indent:-9999px;} 
+164 							#cboxPrevious:hover{background-position:bottom left;} 
+165 							#cboxNext{position:absolute; top:50%; right:5px; margin-top:-32px; background:url('https://sites.google.com/a/bbva.com/it-am-lab/files/controlscbx.png') no-repeat top right; width:28px; height:65px; text-indent:-9999px;} 
+166 							#cboxNext:hover{background-position:bottom right;} 
+167 							#cboxClose{position:absolute; top:5px; right:5px; display:block; background:url('https://sites.google.com/a/bbva.com/it-am-lab/files/controlscbx.png') no-repeat top center; width:38px; height:19px; text-indent:-9999px;} 
+168 							#cboxClose:hover{background-position:bottom center;} 
+169 						/*****************************************************************/ 
+170 						 
+171                         .header_hide_style { 
+172 							display: none; 
+173                         } 
+174                         .header_style { 
+175 							height: 35px; 
+176                             background-color: #009EE5; 
+177                             border-right: 0.5px solid #FFFFFF; 
+178 							color: white; 
+179                             font-weight: bold; 
+180                             text-align: center; 
+181                         } 
+182                         .filtros_style { 
+183 							color: #094FA4; 
+184                             font-family: Arial, sans-serif; 
+185                             font-weight: bold; 
+186                             font-size: 13px; 
+187                         } 
+188                         .cell_style { 
+189 							height: 35px; 
+190                             border-bottom: 1px solid #D9D9D9; 
+191                             background-color: #FFFFFF; 
+192                             text-align: center; 
+193                         } 
+194                         .cell_left_style { 
+195 							height: 35px; 
+196 							border-bottom: 1px solid #D9D9D9; 
+197                             background-color: #FFFFFF; 
+198 							text-align: left; 
+199                         } 
+200                         .cell_warning_style { 
+201 							height: 35px; 
+202                             border-bottom: 1px solid #D9D9D9; 
+203                             background-color: #dd7e6b; 
+204                             text-align: center;      
+205                             color: #000000; 
+206                         } 
+207                         .cell_warning_info_style { 
+208 							height: 35px; 
+209                             border-bottom: 1px solid #D9D9D9; 
+210                             background-color: #FFD966; 
+211                             text-align: center;      
+212                             color: #000000; 
+213                         } 
+214                         .cell_width_200 { 
+215 							width: 200px; 
+216                         } 
+217                         .cell_width_180 { 
+218 							width: 200px; 
+219                         } 
+220                         .cell_width_120 { 
+221 							width: 120px; 
+222                         } 
+223                         .cell_width_100 { 
+224 							width: 100px; 
+225                         } 
+226                         .cell_width_85 { 
+227 							width: 85px; 
+228                         } 
+229                         .cell_width_70 { 
+230 							width: 70px; 
+231                         } 
+232                         .cell_width_60 { 
+233 							width: 60px; 
+234                         } 
+235                         .bold_style { 
+236 							font-weight: bold; 
+237                         } 
+238                 </style> 
+239                 <script type="text/javascript" src="https://www.google.com/jsapi"></script> 
+240                 <script src="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/jquery-1.10.2.min.js"></script> 
+241                 <link href="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/perfect-scrollbar.css" rel="stylesheet"> 
+242                 <script src="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/jquery.mousewheel.js"></script> 
+243                 <script src="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/perfect-scrollbar.js"></script> 
+244                 <link href="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/colorbox.css" rel="stylesheet" /> 
+245                 <script src="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/jquery.colorbox.js"></script> 
+246                 <script type="text/javascript"> 
+247                         if(typeof String.prototype.trim !== 'function') { 
+248 						  String.prototype.trim = function() { 
+249 							return this.replace(/^\s+|\s+$/g, '');  
+250 						  } 
+251 						}                           
+252                         google.load('visualization', '1.1', {packages: ['controls','table']}); 
+253                         google.setOnLoadCallback(draw); 
+254  
+255                         function draw() { 
+256                    
+257                                 var query = new google.visualization.Query('https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=0AiFNgwhcmeiHdEFibmNyYWZxaVljM2NjdFEzbEQtN0E#gid=0'); 
+258  
+259                                 query.send(handleQueryResponse); 
+260                                  
+261                         } 
+262                          
+263                         function handleQueryResponse(response) { 
+264                                 if (response.isError()) { 
+265                                         alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage()); 
+266                                         return; 
+267                                 } 
+268                                 var data = response.getDataTable(); 
+269                                                                  
+270                                 var category_codigo = new google.visualization.ControlWrapper({ 
+271 														'controlType': 'StringFilter', 
+272                                                         'containerId': 'filtro1', 
+273                                                         'options': { 
+274 															'filterColumnLabel': 'CODIGO', 
+275 															'ui': { 
+276 																'labelSeparator' : '', 
+277                                                                 'label' : '', 
+278                                                                 'cssClass' : '' 
+279                                                             } 
+280                                                         } 
+281                                                     }); 
+282 								 
+283 								var category_champion = new google.visualization.ControlWrapper({ 
+284 														'controlType': 'CategoryFilter', 
+285                                                         'containerId': 'filtro2', 
+286                                                         'options': { 
+287 															'filterColumnLabel': 'CHAMPION', 
+288 															'ui': { 
+289 																'labelSeparator' : '', 
+290                                                                 'label' : '', 
+291                                                                 'caption' : 'Todos', 
+292                                                                 'allowMultiple': false, 
+293                                                                 'allowTyping': false, 
+294                                                                 'selectedValuesLayout': 'aside' 
+295                                                             } 
+296                                                         } 
+297                                                     }); 
+298 								 
+299 								var category_lider = new google.visualization.ControlWrapper({ 
+300 														'controlType': 'CategoryFilter', 
+301                                                         'containerId': 'filtro3', 
+302                                                         'options': { 
+303 															'filterColumnLabel': 'LÍDER', 
+304 															'ui': { 
+305 																'labelSeparator' : '', 
+306                                                                 'label' : '', 
+307                                                                 'caption' : 'Todos', 
+308                                                                 'allowMultiple': false, 
+309                                                                 'allowTyping': false, 
+310                                                                 'selectedValuesLayout': 'aside' 
+311                                                             } 
+312                                                         } 
+313                                                     }); 
+314 													 
+315                                 var category_anio = new google.visualization.ControlWrapper({ 
+316 														'controlType': 'CategoryFilter', 
+317                                                         'containerId': 'filtro4', 
+318                                                         'options': { 
+319 															'filterColumnLabel': 'AÑO', 
+320 															'ui': { 
+321 																'labelSeparator' : '', 
+322                                                                 'label' : '', 
+323                                                                 'caption' : 'Selecciona', 
+324                                                                 'allowMultiple': true, 
+325                                                                 'allowTyping': false, 
+326                                                                 'selectedValuesLayout': 'aside' 
+327                                                             } 
+328                                                         } 
+329                                                     }); 
+330 													 
+331 								var category_estado = new google.visualization.ControlWrapper({ 
+332 														'controlType': 'CategoryFilter', 
+333                                                         'containerId': 'filtro5', 
+334                                                         'options': { 
+335 															'filterColumnLabel': 'ESTADO', 
+336 															'ui': { 
+337 																'labelSeparator' : '', 
+338                                                                 'label' : '', 
+339                                                                 'caption' : 'Selecciona', 
+340                                                                 'allowMultiple': true, 
+341                                                                 'allowTyping': false, 
+342                                                                 'selectedValuesLayout': 'aside' 
+343 															} 
+344                                                         } 
+345                                                     }); 
+346 								 
+347 								var category_fase = new google.visualization.ControlWrapper({ 
+348 														'controlType': 'CategoryFilter', 
+349                                                         'containerId': 'filtro6', 
+350                                                         'options': { 
+351 															'filterColumnLabel': 'FASE ACTUAL', 
+352 															'ui': { 
+353 																'labelSeparator' : '', 
+354                                                                 'label' : '', 
+355                                                                 'caption' : 'Selecciona', 
+356                                                                 'allowMultiple': true, 
+357                                                                 'allowTyping': false, 
+358                                                                 'selectedValuesLayout': 'aside' 
+359 															} 
+360                                                         } 
+361                                                     }); 
+362 								 
+363 								var category_area = new google.visualization.ControlWrapper({ 
+364 														'controlType': 'CategoryFilter', 
+365                                                         'containerId': 'filtro7', 
+366                                                         'options': { 
+367 															'filterColumnLabel': 'ÁREA', 
+368 															'ui': { 
+369 																'labelSeparator' : '', 
+370                                                                 'label' : '', 
+371                                                                 'caption' : 'Selecciona', 
+372                                                                 'allowMultiple': true, 
+373                                                                 'allowTyping': false, 
+374                                                                 'selectedValuesLayout': 'aside' 
+375 															} 
+376                                                         } 
+377                                                     }); 
+378 								 
+379 								var category_op = new google.visualization.ControlWrapper({ 
+380 														'controlType': 'CategoryFilter', 
+381                                                         'containerId': 'filtro8', 
+382                                                         'options': { 
+383 															'filterColumnLabel': 'OFICINA DE PROYECTO', 
+384 															'ui': { 
+385 																'labelSeparator' : '', 
+386                                                                 'label' : '', 
+387                                                                 'caption' : 'Selecciona', 
+388                                                                 'allowMultiple': true, 
+389                                                                 'allowTyping': false, 
+390                                                                 'selectedValuesLayout': 'aside' 
+391 															} 
+392                                                         } 
+393                                                     });                                 
+394  
+395                                 var cssClassNames = { 
+396                                         'headerRow': 'header_hide_style', 
+397                                         'tableCell': 'cell_style' 
+398                                 }; 
+399                                  
+400                                 var options = {'allowHtml': true, 'cssClassNames': cssClassNames, 'sort': 'disable', 'height': '100%', 'width': '100%'}; 
+401                                  
+402                                 var table = new google.visualization.ChartWrapper({ 
+403                                                                 'chartType': 'Table', 
+404                                                                 'containerId': 'table', 
+405                                                                 'options': options 
+406                                                         }); 
+407                                  
+408                                 var formatter_link = new google.visualization.PatternFormat('<a class="iframe" href="{12}" target="_blank" >{0}</a>'); 
+409                                 formatter_link.format(data, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]); 
+410                                  
+411                                 var formatter_fecha = new google.visualization.DateFormat({pattern: 'dd.LLLyy'}); 
+412                                 formatter_fecha.format(data, 8); 
+413                                  
+414 								var column_codigo = 0; 
+415 								var column_nombre = 1; 
+416 								var column_tipo = 2; 
+417 								var column_anio = 3; 
+418 								var column_finproyecto = 4; 
+419 								var column_lider = 5; 
+420 								var column_estado = 6; 
+421 								var column_fase = 7; 
+422 								var column_finfase = 8; 
+423 								var column_ppto = 9; 
+424 								var column_champion     = 10;    
+425 								var column_area = 11; 
+426 								var column_op = 13; 
+427 								 
+428 								var stilo; 
+429                                 var fecha_actual = new Date(); 
+430                                 fecha_actual = new Date(fecha_actual.getFullYear(), fecha_actual.getMonth(), fecha_actual.getDate());                                            
+431                                 var cadena_format; 
+432                                  
+433                                  
+434                                 for (var row = 0; row < data.getNumberOfRows(); row++) { 
+435                                         data.setCell(row, column_codigo, data.getValue(row, column_codigo), data.getFormattedValue(row, column_codigo), {'className': 'cell_left_style bold_style cell_width_85'}); 
+436 										data.setCell(row, column_nombre, data.getValue(row, column_nombre), data.getFormattedValue(row, column_nombre), {'className': 'cell_left_style cell_width_180'}); 
+437 										data.setCell(row, column_tipo, data.getValue(row, column_tipo), data.getFormattedValue(row, column_tipo), {'className': 'cell_style'}); 
+438 										data.setCell(row, column_anio, data.getValue(row, column_anio), data.getFormattedValue(row, column_anio), {'className': 'cell_style bold_style cell_width_60'}); 
+439 										data.setCell(row, column_finproyecto, data.getValue(row, column_finproyecto), data.getFormattedValue(row, column_finproyecto), {'className': 'cell_style'}); 
+440 										data.setCell(row, column_lider, data.getValue(row, column_lider), data.getFormattedValue(row, column_lider), {'className': 'cell_style cell_width_100'}); 
+441                                                                                  
+442                                         cadena_format = data.getValue(row, column_estado); 
+443                                         cadena_format = cadena_format.substring(2); 
+444                                         cadena_format = cadena_format.trim(); 
+445                                         data.setCell(row, column_estado, data.getValue(row, column_estado), cadena_format, {'className': 'cell_style bold_style cell_width_100'}); 
+446                                                                                  
+447                                         cadena_format = data.getValue(row, column_fase); 
+448                                         cadena_format = cadena_format.substring(2); 
+449                                         cadena_format = cadena_format.trim(); 
+450                                         data.setCell(row, column_fase, data.getValue(row, column_fase), cadena_format, {'className': 'cell_style bold_style cell_width_120'}); 
+451                                          
+452                                                                                  
+453                                         stilo = 'cell_style bold_style cell_width_70'; 
+454                                         if ((data.getValue(row, column_estado)).toLowerCase().indexOf('en cartera') == -1 
+455 											&& (data.getValue(row, column_estado)).toLowerCase().indexOf('terminado') == -1 
+456 											&& (data.getValue(row, column_estado)).toLowerCase().indexOf('suspendido') == -1 
+457 											&& (data.getValue(row, column_estado)).toLowerCase().indexOf('cancelado') == -1 
+458 											&& data.getValue(row, column_finfase) < fecha_actual) { 
+459 											stilo = 'cell_warning_style bold_style cell_width_70'; 
+460                                         } else { 
+461 											if ((data.getValue(row, column_estado)).toLowerCase().indexOf('en cartera') == -1 
+462 												&& (data.getValue(row, column_estado)).toLowerCase().indexOf('terminado') == -1 
+463 												&& (data.getValue(row, column_estado)).toLowerCase().indexOf('suspendido') == -1 
+464 												&& (data.getValue(row, column_estado)).toLowerCase().indexOf('cancelado') == -1 
+465 												&& data.getValue(row, column_finfase) >= fecha_actual && ((((data.getValue(row, column_finfase)-fecha_actual)/1000)/60)/60)/24 <= 7) { 
+466 												stilo = 'cell_warning_info_style bold_style cell_width_70'; 
+467                                             } 
+468     
+469                                         } 
+470                                         data.setCell(row, column_finfase, data.getValue(row, column_finfase), data.getFormattedValue(row, column_finfase), {'className': stilo}); 
+471                                         data.setCell(row, column_ppto, data.getValue(row, column_ppto), data.getFormattedValue(row, column_ppto), {'className': 'cell_style'}); 
+472                                         data.setCell(row, column_champion, data.getValue(row, column_champion), data.getFormattedValue(row, column_champion), {'className': 'cell_style cell_width_100'}); 
+473                                         data.setCell(row, column_area, data.getValue(row, column_area), data.getFormattedValue(row, column_area), {'className': 'cell_style cell_width_100'}); 
+474 										 
+475 										cadena_format = data.getValue(row, column_op); 
+476                                         cadena_format = cadena_format.substring(0, 1); 
+477                                         cadena_format = cadena_format.trim(); 
+478 										data.setCell(row, column_op, data.getValue(row, column_op), cadena_format, {'className': 'cell_style'}); 
+479                                               
+480                                 } 
+481                                  
+482                                 var view = new google.visualization.DataView(data); 
+483                                 view.setColumns([0, 1, 13, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]); 
+484                                  
+485                                 new google.visualization.Dashboard(document.getElementById('dashboard')). 
+486                                                 bind([category_codigo, category_champion, category_lider, category_anio, category_estado, category_fase, category_area, category_op], table). 
+487                                                 draw(view); 
+488  
+489                                 google.visualization.events.addListener(table, 'ready', 
+490                                         function(event) { 
+491 												$(".google-visualization-controls-stringfilter").children().css( "width", "80px" ); 
+492                                                 $(".iframe").colorbox({iframe:true, width:"100%", height:"95%"}); 
+493                                                 $('#contenido_tabla').perfectScrollbar({ 
+494 													wheelSpeed: 20, 
+495 													wheelPropagation: false 
+496                                                 }); 
+497                                                  
+498                                                 $("#table table tbody tr:last-child td").each(function(index){ 
+499 													if ($("#w"+(index+1)).val() > $(this).width()) { 
+500 														$(this).width($("#w"+(index+1)).val()); 
+501 														$("#h"+(index+1)).width($("#w"+(index+1)).val()); 
+502 													} else { 
+503 														$("#h"+(index+1)).width($(this).width()); 
+504 													} 
+505  
+506                                                 }); 
+507                                                 $("#table table tbody tr:last-child td").each(function(index){ 
+508 													$("#h"+(index+1)).width($(this).width()); 
+509                                                 }); 
+510  
+511                                                 $(".iframe").each(function(index, elemento){ 
+512 													var keysheet = elemento.href; 
+513 													var indexkey = keysheet.indexOf("key="); 
+514 													keysheet = keysheet.substring(indexkey + 4, keysheet.length); 
+515 													indexkey = keysheet.indexOf("&"); 
+516 													if (indexkey != -1) { 
+517 														keysheet = keysheet.substring(0, indexkey); 
+518 													} 
+519 													if ($('#chk_editar').prop('checked')) { 
+520 														$.colorbox.remove(); 
+521 														elemento.href = 'https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=' + keysheet +'&usp=drive_web'; 
+522 													} else { 
+523 														elemento.href = 'https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=' + keysheet +'&output=html&pubredirect=true&widget=true'; 
+524 													} 
+525 												}); 
+526                                                  
+527                                                  
+528                                 }); 
+529                                  
+530                         } 
+531                         function seleccionar(el) { 
+532 							var body = document.body, range, sel; 
+533                             if (document.createRange && window.getSelection) { 
+534 								range = document.createRange(); 
+535                                 sel = window.getSelection(); 
+536                                 sel.removeAllRanges(); 
+537                                 try { 
+538 									range.selectNodeContents(el); 
+539                                     sel.addRange(range); 
+540                                     range.execCommand('copy'); 
+541                                 } catch (e) { 
+542 									range.selectNode(el); 
+543                                     sel.addRange(range); 
+544                                 } 
+545                             } else if (body.createTextRange) { 
+546 								range = body.createTextRange(); 
+547                                 range.moveToElementText(el); 
+548                                 range.select(); 
+549                             } 
+550                         } 
+551 						function cambia_detalle() { 
+552 							$(".iframe").each(function(index, elemento){ 
+553 								var keysheet = elemento.href; 
+554 								var indexkey = keysheet.indexOf("key="); 
+555 								keysheet = keysheet.substring(indexkey + 4, keysheet.length); 
+556 								indexkey = keysheet.indexOf("&"); 
+557 								if (indexkey != -1) { 
+558 									keysheet = keysheet.substring(0, indexkey); 
+559 								} 
+560 								if ($('#chk_editar').prop('checked')) { 
+561 									$.colorbox.remove(); 
+562 									elemento.href = 'https://docs.google.com/a/bbva.com/spreadsheet/ccc?key=' + keysheet +'&usp=drive_web'; 
+563 								} else { 
+564 									$(".iframe").colorbox({iframe:true, width:"100%", height:"95%"}); 
+565 									elemento.href = 'https://spreadsheets.google.com/a/bbva.com/spreadsheet/ccc?chrome=false&key=' + keysheet +'&output=html&pubredirect=true&widget=true'; 
+566 								} 
+567 							}); 
+568 						} 
+569                 </script> 
+570 				<div id="dashboard"> 
+571 					<table width="100%"> 
+572 						<tr> 
+573 							<td colspan="9" style="text-align:right;padding-right: 5px;" class="filtros_style"> 
+574 								<table align="right"> 
+575 									<tr> 
+576 										<td style="text-align:right;"> 
+577 											<a class="iframe" href="https://docs.google.com/spreadsheets/d/1YkVcEFtZWDFM60Fi-gqkqZeMPGzgbHzsP16qcbxLcT0/edit#gid=0" > 
+578 												<img src="https://sites.google.com/a/bbva.com/it-am-lab/files/btnGraficos2.png"> 
+579 											</a> 
+580 										</td> 
+581 										<td style="text-align:right;"> 
+582 											<a href="#" onclick="seleccionar(document.getElementById('select_table'));"> 
+583 												<img src="https://sites.google.com/a/bbva.com/it-am-lab/files/btnSelecciona2.png"> 
+584 											</a> 
+585 										</td> 
+586 									</tr> 
+587 								</table> 
+588 								 
+589 							</td> 
+590 						</tr> 
+591 						<tr> 
+592 							<td width="5%" style="text-align:right;" class="filtros_style">Codigo:</td> 
+593 							<td width="8%" class="filtros_style"><div id="filtro1"></div></td> 
+594 							<td width="5%" style="text-align:right;" class="filtros_style">Champion:</td> 
+595 							<td width="18%" class="filtros_style"><div id="filtro2"></div></td> 
+596 							<td width="8%" style="text-align:right;" class="filtros_style">Líder:</td> 
+597 							<td width="20%" class="filtros_style"><div id="filtro3"></div></td> 
+598 							<td width="10%" style="text-align:right;" class="filtros_style">Oficina Proyectos:</td> 
+599 							<td width="21%" class="filtros_style"><div id="filtro8"></div></td> 
+600 							<td width="5%" style="text-align:right;" class="filtros_style"><input id="chk_editar" type="checkbox" onclick="cambia_detalle();">Editar</input></td> 
+601 						</tr> 
+602 						<tr> 
+603 							<td height="50px" style="text-align:right;" class="filtros_style">Año:</td> 
+604 							<td height="50px" class="filtros_style"><div id="filtro4"></div></td> 
+605 							<td height="50px" style="text-align:right;" class="filtros_style">Estado:</td> 
+606 							<td height="50px" class="filtros_style"><div id="filtro5"></div></td> 
+607 							<td height="50px" style="text-align:right;" class="filtros_style">Fase Actual:</td> 
+608 							<td height="50px" class="filtros_style"><div id="filtro6"></div></td> 
+609 							<td height="50px" style="text-align:right;" class="filtros_style">Area:</td> 
+610 							<td colspan = "2" height="50px" class="filtros_style"><div id="filtro7"></div></td> 
+611 						</tr> 
+612 						<tr> 
+613 							<td colspan="9"> 
+614 								<div id="select_table"> 
+615 								<table id="headers_table"  width="100%" height="35px" class="filtros_style"> 
+616 									<tr> 
+617 										<td id="h1" class="header_style"><input id="w1" type="hidden" value="60"/>CODIGO</td> 
+618 										<td id="h2" class="header_style"><input id="w2" type="hidden" value="56"/>NOMBRE</td> 
+619 										<td id="h3" class="header_style"><input id="w3" type="hidden" value="5"/>OP</td> 
+620 										<td id="h4" class="header_style"><input id="w4" type="hidden" value="31"/>TIPO</td> 
+621 										<td id="h5" class="header_style"><input id="w5" type="hidden" value="28"/>AÑO</td> 
+622 										<td id="h6" class="header_style"><input id="w6" type="hidden" value="71"/>FIN PROYECTO</td> 
+623 										<td id="h7" class="header_style"><input id="w7" type="hidden" value="38"/>LÍDER</td> 
+624 										<td id="h8" class="header_style"><input id="w8" type="hidden" value="53"/>ESTADO</td> 
+625 										<td id="h9" class="header_style"><input id="w9" type="hidden" value="49"/>FASE ACTUAL</td> 
+626 										<td id="h10" class="header_style"><input id="w10" type="hidden" value="34"/>FIN FASE</td> 
+627 										<td id="h11" class="header_style"><input id="w11" type="hidden" value="55"/>Ppto EST(MXN)</td> 
+628 										<td id="h12" class="header_style"><input id="w12" type="hidden" value="70"/>CHAMPION</td> 
+629 										<td id="h13" class="header_style"><input id="w13" type="hidden" value="35"/>ÁREA</td> 
+630 									</tr> 
+631 								</table> 
+632 								<div id="contenido_tabla" style="height:500px;overflow:hidden;position:relative;"> 
+633 									<table width="100%"> 
+634 										<tr> 
+635 											<td><div id="table"></div></td> 
+636 										</tr> 
+637 									</table> 
+638 								</div> 
+639 								</div> 
+640 							</td> 
+641 						</tr> 
+642 						<tr> 
+643 							<td colspan="9" style="text-align:right;padding-right: 5px;"> 
+644 								<a href="https://docs.google.com/a/bbva.com/spreadsheet/fm?key=0AiFNgwhcmeiHdHlVZFNPLU9IT1J6Rmt1UnF2a0VPS0E&fmcmd=420"> 
+645 									<img src="https://sites.google.com/a/bbva.com/it-am-lab/files/btnDescarga2.png"> 
+646 								</a> 
+647 							</td> 
+648 						</tr> 
+649 					</table> 
+650                                          
+651                 </div> 
+652         ]]> 
+653 	</Content>  
+654 </Module> 
