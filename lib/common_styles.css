@@ -46,7 +46,8 @@
 	background-color: #FFFFFF;
 	text-align:justify;
 	white-space: pre-line;
-}.cell_width_200 {
+}
+.cell_width_200 {
 	width: 200px;
 }
 .cell_width_180 {
