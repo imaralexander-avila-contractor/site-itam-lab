@@ -4,11 +4,190 @@
   <Content type="html">
         <![CDATA[
                 <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-		<link href="https://cdn.rawgit.com/itambbvacom/site-itam-lab/master/lib/index_news.css" rel="stylesheet">
+                <style>
+                        div {
+                                font-family: Arial, sans-serif;
+                                background-color: #ffffff;
+                                font-variant: middle;
+                        }        
+                        /*
+                                Slideshow
+                        */
+                        #slides {
+                                z-index: 100;
+                        }
+                        /*
+                                Slides container
+                                Important:
+                                Set the width of your slides container
+                                Set to display none, prevents content flash
+                        */
+                        .slides_container {
+                                height: 300px;
+                                overflow: hidden;
+                                display: none;
+                                margin: 0 auto;
+                        }
+                                 
+                        /*
+                                Each slide
+                                Important:
+                                Set the width of your slides
+                                If height not specified height will be set by the slide content
+                                Set to display block
+                        */
+                        .slides_container div.slide {
+                                display: block;
+                                height: 300px;
+                        }
+                        
+                        /*
+                                Next/prev buttons
+                        */
+                        #slides .next,#slides .prev {
+                                position: absolute;
+                                top: 160px;
+                                left: 3px;
+                                width: 24px;
+                                height: 43px;
+                                display: block;
+                                z-index: 101;
+                                opacity: 0.5;
+                        }        
+                        
+                        #slides .next {
+                                left: 510px;
+                        }
+                                 
+                        /*
+                                Pagination
+                        */
+                        .pagination {
+                                margin: 0px auto 0;
+                                width: 100px;
+                        }
+                                 
+                        .pagination li {
+                                float: left;
+                                margin: 0 1px;
+                                list-style: none;
+                        }
+                                 
+                        .pagination li a {
+                                display: block;
+                                width: 12px;
+                                height: 0;
+                                padding-top: 12px;
+                                background-position: 0 0;
+                                float: left;
+                                overflow: hidden;
+                        }
+                                 
+                        .pagination li.current a {
+                                background-position: 0 -12px;
+                        }
+                                 
+                        a:link,a:visited {
+                                color: #599100;
+                                text-decoration: none;
+                        }
+                                 
+                        a:hover,a:active {
+                                color: #599100;
+                                text-decoration: underline;
+                        }
+                                 
+                        span.newsTitle {
+                                font-size: 18px;
+                                text-transform: uppercase;
+                                font-weight: bold;
+                                border-bottom: 1px solid #b0f0d8;
+                        }
+                        #fondo {
+                                float:left;
+                                position:relative;
+                        }
+                        #fondo .informacion {
+                                width:320px;
+                                position:absolute;
+                                top:10px;
+                                left:14px;
+                        }
+                </style>
                 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-                <script src="https://cdn.rawgit.com/itambbvacom/site-itam-lab/master/lib/index_news.js"></script>
-                <script src="https://cdn.rawgit.com/itambbvacom/site-itam-lab/master/lib/jquery-1.10.2.min.js"></script>
-                <script src="https://cdn.rawgit.com/itambbvacom/site-itam-lab/master/lib/slides.min.jquery.js"></script>
+                <script src="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/jquery-1.10.2.min.js"></script>
+                <script src="https://raw.githubusercontent.com/itambbvacom/site-itam-lab/master/lib/slides.min.jquery.js"></script>
+                <script type="text/javascript">
+                        google.load('visualization', '1.1', {packages: ['controls']});
+                        google.setOnLoadCallback(draw);
+                        
+                        function draw() {
+                                                                var w = $('#slides').width();
+                                                                $('.slides_container div.slide').width(w);
+                                                                $('.contenido').width(w*0.85);
+                                                                
+                                                                w = $('.slide').width() - ((w*0.85) + 10);
+                                                                w = w/2;
+                                                                w = w - 20;
+                                                                $('#slides .prev').css('left', w);
+                                                                w = $('.slide').width() - w - 10;
+                                                                $('#slides .next').css('left', w);
+
+                                var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1ZOw0_Z-BfC9xKp2Fxk4c33xnwLMxVYco1e6cKo0X5wA/edit#gid=0');
+                                query.send(handleQueryResponse);
+                        }
+                        
+                        function handleQueryResponse(response) {
+                                if (response.isError()) {
+                                        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                                        return;
+                                }
+                        
+                                var data = response.getDataTable();
+                                for (var row = 0; row < data.getNumberOfRows(); row++) {
+                                        $('#f' + (row + 1)).text('Fecha: ' + data.getFormattedValue(row, 0));
+                                        $('#h' + (row + 1)).text(cut_text(data.getValue(row, 1), 43));
+                                        $('#c' + (row + 1)).text(cut_text(data.getValue(row, 2), 650));
+                                        $('#a' + (row + 1)).text('Autor: ' + data.getValue(row, 3));
+                                        $('#l' + (row + 1)).attr('href', data.getValue(row, 4));
+                                }
+                                
+                                slide_news();
+                        
+                        }
+                        
+                        function cut_text(text, size) {
+                                if (text.length > size) {
+                                   text = text.substring(0, size);
+                                   var index = text.lastIndexOf(' ');
+                                   if (index != -1) {
+                                           text = text.substring(0, (index + 1));
+                                   }
+                                   text = text.trim();
+                                   text = text + '...';
+                                }
+                                
+                                return text;
+                        }
+                        
+                        function slide_news() {
+                                $('#slides').slides({
+                                        preload : true,
+                                        preloadImage : 'https://sites.google.com/a/bbva.com/it-am-lab/files/loading.gif',
+                                        play : 7000, //7000
+                                        pause : 3500,//3500
+                                        hoverPause : true,
+                                        animationStart : function(current) {
+                                        },
+                                        animationComplete : function(current) {
+                                        },
+                                        slidesLoaded : function() {
+                                        }
+                                });
+                                
+                                $('.pagination li a').css('background-image', 'url(https://sites.google.com/a/bbva.com/it-am-lab/files/pagination.png)');
+                        }
+                </script>
                 <div id="slides">
                         <div class="slides_container">
                                 <div class="slide">
@@ -131,6 +310,7 @@
                                 <img src="https://sites.google.com/a/bbva.com/it-am-lab/files/arrow-next.png" width="24" height="43" alt="Arrow Next">
                         </a>
                 </div>
+
         ]]>
   </Content> 
 </Module>
