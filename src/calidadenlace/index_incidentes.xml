@@ -6,8 +6,8 @@
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 				<link href="https://cdn.rawgit.com/itambbvacom/site-itam-lab/master/lib/colorbox.css" rel="stylesheet">
 				<link href="https://cdn.rawgit.com/itambbvacom/site-itam-lab/master/lib/perfect-scrollbar.css" rel="stylesheet">
-				<link href="https://cdn.rawgit.com/itambbvacom/site-itam-lab/master/lib/index_incidentes.css" rel="stylesheet">
-                <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+				<link href="https://cdn.rawgit.com/itambbvacom/site-itam-lab/master/lib/common_styles01.css" rel="stylesheet">
+                		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 				<script type="text/javascript" src="https://cdn.rawgit.com/itambbvacom/site-itam-lab/master/lib/index_incidentes.js"></script>
                 <div id="dashboard">
 					<table width="100%">
