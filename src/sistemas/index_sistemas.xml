@@ -4,16 +4,16 @@
 	<Content type="html">
         <![CDATA[				
 				<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-				<link href="https://cdn.rawgit.com/itambbvacom/site-itam-lab/master/lib/index_sistemas.css" rel="stylesheet">
-				<link href="https://cdn.rawgit.com/itambbvacom/site-itam-lab/master/lib/jquery-ui.css" rel="stylesheet">
-				<link href="https://cdn.rawgit.com/itambbvacom/site-itam-lab/master/lib/colorbox01.css" rel="stylesheet">
-				<link href="https://cdn.rawgit.com/itambbvacom/site-itam-lab/master/lib/tabs.css" rel="stylesheet">
+				<link href="https://rawgit.com/itambbvacom/site-itam-lab/master/lib/index_sistemas.css" rel="stylesheet">
+				<link href="https://rawgit.com/itambbvacom/site-itam-lab/master/lib/jquery-ui.css" rel="stylesheet">
+				<link href="https://rawgit.com/itambbvacom/site-itam-lab/master/lib/colorbox01.css" rel="stylesheet">
+				<link href="https://rawgit.com/itambbvacom/site-itam-lab/master/lib/tabs.css" rel="stylesheet">
 				<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-				<script src="https://cdn.rawgit.com/itambbvacom/site-itam-lab/master/lib/jquery-1.10.2.min.js"></script>
-				<script src="https://cdn.rawgit.com/itambbvacom/site-itam-lab/master/lib/jquery-ui.js"></script>
-				<script src="https://cdn.rawgit.com/itambbvacom/site-itam-lab/master/lib/jquery.multi-accordion-1.5.3.js"></script>
-				<script src="https://cdn.rawgit.com/itambbvacom/site-itam-lab/master/lib/jquery.colorbox.js"></script>
-				<script src="https://cdn.rawgit.com/itambbvacom/site-itam-lab/master/lib/index_sistemas.js"></script>
+				<script src="https://rawgit.com/itambbvacom/site-itam-lab/master/lib/jquery-1.10.2.min.js"></script>
+				<script src="https://rawgit.com/itambbvacom/site-itam-lab/master/lib/jquery-ui.js"></script>
+				<script src="https://rawgit.com/itambbvacom/site-itam-lab/master/lib/jquery.multi-accordion-1.5.3.js"></script>
+				<script src="https://rawgit.com/itambbvacom/site-itam-lab/master/lib/jquery.colorbox.js"></script>
+				<script src="https://rawgit.com/itambbvacom/site-itam-lab/master/lib/index_sistemas.js"></script>
 				<table width="100%">
 					<tr>
 						<td style="text-align:right;padding-right: 5px;">
